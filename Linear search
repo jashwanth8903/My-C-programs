@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+// Function to perform linear search
+int linearSearch(int arr[], int size, int key) {
+    int f=0;
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == key) {
+            f=1;
+            break;
+        }
+    }
+    return f;
+}
+
+int main() {
+    int size, key,f = 0;
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+    int arr[size];
+    
+    printf("Enter %d elements:\n", size);
+    
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
+    }
+    
+    printf("Enter the element to be searched: ");
+    scanf("%d", &key);
+
+    
+    int result = linearSearch(arr, size, key);
+
+    if (result == 1) {
+        printf("Element found at index %d\n", result);
+    } else {
+        printf("Element not found in the array\n");
+    }
+
+    return 0;
